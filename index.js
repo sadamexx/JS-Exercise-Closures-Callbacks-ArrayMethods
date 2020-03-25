@@ -133,8 +133,10 @@ function processProduct(num1, num2, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, cb) {
+  return cb(list.filter((a, b) => {
+    list.indexOf(a)
+  }))
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -156,8 +158,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
-  /* code here */
+function lowerCaseStrings(array) {
+  const strings = [];
+  array.forEach(function(item) {
+    return strings.push(item.toLowerCase())
+  })
+  return strings;
 }
 
 /**
@@ -175,8 +181,14 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array) {
+  return array.map(function(item) {
+    if(item === 'apple'){
+      return true;
+    } else {
+      return false;
+    }
+  })
 }
 
 /**
@@ -195,8 +207,14 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(array) {
+  let filteredArray = []
+  array.filter((word, index, array) => {    
+    if(word !== 'apple'){
+      filteredArray.push(word)
+    } 
+  })
+  return filteredArray;
 }
 
 /**
